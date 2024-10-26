@@ -16,7 +16,16 @@ function generatePrompt() {
 
   currentSubject = subjectList[Math.floor(Math.random() * subjectList.length)];
 
-  document.getElementById("prompt").innerText = `${currentSubject}, ${currentTense}, ${currentForm}, verb: ${currentVerb.base}`;
+  // Update verb (in bold and larger font)
+  document.getElementById("verb").innerText = currentVerb.base;
+
+  // Update prompt details with styled subject, tense, and form
+  document.getElementById("prompt").innerHTML = `
+    <span class="subject">${currentSubject}</span>, 
+    <span class="tense">${currentTense}</span>, 
+    <span class="form">${currentForm}</span>
+  `;
+  
   document.getElementById("user-input").value = ""; // Clear the input field
   document.getElementById("feedback").innerText = ""; // Clear feedback
 }
