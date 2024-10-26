@@ -125,7 +125,7 @@ function generateCorrectSentence() {
 }
 
 document.getElementById("submit-btn").addEventListener("click", function () {
-  const userAnswer = document.getElementById("user-input").value.trim();
+  const userAnswer = document.getElementById("user-input").value.trim().replaceAll('?','').replaceAll('.','');
   const correctAnswer = generateCorrectSentence();
 
   if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
